@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        label {
+            label "master"
+            customWorkspace "/root/repo"
+        }
+    }
     
     stages {
         
