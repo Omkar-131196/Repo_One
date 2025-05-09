@@ -1,7 +1,6 @@
 pipeline {
     agent {
         label {
-            label "master"
             customWorkspace "/root/repo"
         }
     }
