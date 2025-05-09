@@ -1,8 +1,8 @@
 pipeline {
     agent {
         label {
-            label 'Built-In Node'
-            customWorkspace "/root/repo"
+            label 'slave-1'
+            customWorkspace "/home/ec2-user/jenkins/repo"
         }
     }
     
@@ -17,7 +17,7 @@ pipeline {
         
         stage ('stage-2') {
             steps {
-            sh "cp -r /root/.jenkins/workspace/pipeline/index.html /var/www/html/"
+            sh "cp -r /home/ec2-user/jenkins/repo/pipeline/index.html /var/www/html/"
             sh "chmod -R 777 /var/www/html/index.html"
             }
             }
