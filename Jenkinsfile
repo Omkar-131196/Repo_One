@@ -17,7 +17,7 @@ pipeline {
 
         stage('stage-2') {
             steps {
-                sh 'cp -r /home/ec2-user/jenkins/repo/pipeline/index.html /var/www/html/'
+                sh 'cp -r /root/repo/index.html /var/www/html/'
                 sh 'chmod -R 777 /var/www/html/index.html'
             }
         }
