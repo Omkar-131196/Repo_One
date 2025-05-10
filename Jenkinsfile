@@ -10,9 +10,9 @@ pipeline {
 
         stage('stage-1') {
             steps {
-                echo "printing in dev branch"
+                echo "printing in qa branch"
                 sh "sudo cd /root"
-                sh "sudo mkdir dev_branch"
+                sh "sudo mkdir qa_branch"
             }
         }
     }
