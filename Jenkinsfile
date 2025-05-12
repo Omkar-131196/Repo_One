@@ -12,8 +12,8 @@ pipeline {
             steps {
                 sh "sudo docker system prune -a -f"
                 sh "sudo docker run -dp 80:80 --name master httpd"
-                sh "sudo chmod -R 777 /home/ec2-user/jenkins/workspace/multi-pipeline_main/index.html"
-                sh "sudo docker cp /home/ec2-user/jenkins/workspace/multi-pipeline_main/index.html master:/usr/local/apache2/htdocs/"
+                sh "sudo chmod -R 777 /home/ec2-user/jenkins/workspace/index.html"
+                sh "sudo docker cp /home/ec2-user/jenkins/workspace/index.html master:/usr/local/apache2/htdocs/"
             }
         }
     }
