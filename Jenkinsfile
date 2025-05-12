@@ -2,7 +2,6 @@ pipeline {
     agent {
         node {
             label 'master'
-            customWorkspace '/root/repo'
         }
     }
 
@@ -10,9 +9,8 @@ pipeline {
 
         stage('stage-1') {
             steps {
-                echo "printing in qa branch"
-                sh "sudo cd /root"
-                sh "sudo mkdir qa_branch"
+                sh "docker run -dp 90:80 --name 2025Q1 httpd"
+                sh "docker cp /root/.jenkins/worskspace/pipeline/index.html 2025Q1://usr/local/apache2/htdocs/"
             }
         }
     }
