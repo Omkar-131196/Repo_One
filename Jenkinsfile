@@ -10,10 +10,10 @@ pipeline {
 
         stage('stage-1') {
             steps {
-                sh "docker system prune -a -f"
-                sh "docker run -dp 80:80 --name master httpd"
-                sh "chmod -R 777 /home/ec2-user/jenkins/workspace/multi-pipeline_main/index.html"
-                sh "docker cp /home/ec2-user/jenkins/workspace/multi-pipeline_main/index.html master:/usr/local/apache2/htdocs/"
+                sh "sudo docker system prune -a -f"
+                sh "sudo docker run -dp 80:80 --name master httpd"
+                sh "sudo chmod -R 777 /home/ec2-user/jenkins/workspace/multi-pipeline_main/index.html"
+                sh "sudo docker cp /home/ec2-user/jenkins/workspace/multi-pipeline_main/index.html master:/usr/local/apache2/htdocs/"
             }
         }
     }
