@@ -2,7 +2,7 @@ pipeline {
     agent {
         node {
             label 'slave-1'
-            customWorkspace '/root/test/'
+            customWorkspace '/home/ec2-user/jenkins'
         }
     }
 
