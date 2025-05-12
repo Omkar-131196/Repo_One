@@ -2,7 +2,6 @@ pipeline {
     agent {
         node {
             label 'master'
-            customWorkspace '/root/repo'
         }
     }
 
@@ -10,8 +9,8 @@ pipeline {
 
         stage('stage-1') {
             steps {
-                sh "cd /root"
-                sh "mkdir main_branch"
+                sh "docker run -dp 80:80 --name master httpd"
+                sh "docker cp /root/.jenkins/worskspace/pipeline/index.html master://usr/local/apache2/htdocs/"
             }
         }
     }
