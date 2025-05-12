@@ -12,9 +12,9 @@ pipeline {
             steps {
                 sh "sudo docker system prune -a -f"
                 sh "sudo docker volume create httpd_volume"
-                sh "cd /var/lib/docker/volumes/httpd_volume/_data/"
+                sh "cd /var/lib/docker/volumes/httpd_volume/_data"
                 sh "sudo cp -r /home/ec2-user/jenkins/workspace/index.html ."
-                sh "sudo chmod -R 777 /home/ec2-user/jenkins/workspace/index.html"
+                sh "sudo chmod -R 777 /var/lib/docker/volumes/httpd_volume/_data/index.html"
             }
         }
 
