@@ -16,6 +16,7 @@ pipeline {
                 sh "sudo cp -r /home/ec2-user/jenkins/workspace/index.html ."
                 sh "sudo chmod -R 777 /home/ec2-user/jenkins/workspace/index.html"
             }
+        }
 
         stage('stage-2') {
             steps {
